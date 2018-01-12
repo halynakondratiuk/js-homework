@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+
+<header>
+	<h1>Fill out the form...</h1>
+</header>
+<form action="success.html">
+	<fieldset>
+		<legend>Personal information</legend>
+		<div>
+			<label> Enter Name:
+				<input type="text" name="name" value="" placeholder="Name" required style="margin: 5px;"><br>
+			</label>
+			<label> Enter Email:
+				<input type="email" name="email" value="" placeholder="Email" required style="margin: 5px;"><br>
+			</label>
+			<label> Telephone number:
+				<input type="tel" name="telephone" value="" placeholder="Telephone" style="margin: 5px;"><br>
+			</label>
+		</div>
+		<hr>
+		<div>
+		  <input type="radio" name="gender" value="male" checked> Male<br>
+		  <input type="radio" name="gender" value="female"> Female<br>
+		</div>
+		<hr>
+		<div>
+		<fieldset>
+			<legend>Social networks:</legend>
+			<input type="checkbox" name="mes1" value="MesOne"> Facebook <br>
+			<input type="checkbox" name="mes2" value="MesTwo"> Twitter <br>
+			<input type="checkbox" name="mes3" value="MesThree"> Instagram <br>
+			<input type="checkbox" name="mes4" value="MesFour"> Google + <br>
+			<input type="checkbox" name="mes5" value="MesFive"> LinkedIn <br>
+			<input type="checkbox" name="mes6" value="MesSix"> Other <br>
+		</fieldset>
+		</div>
+
+		<label for="date"> Date: </label>
+		<input type="date" name="date" value="date" id="date" class="add_margin" style="margin: 10px;"> <br>
+
+		<div>
+		<label for="select"><p>Choose your profession:</p> </label> <br>
+			<select name="profession" id="select"><br>
+			    <option value="worker">Worker</option> <br>
+			    <option value="student">Student</option> <br>
+			    <option value="schoolchild">Schoolchild</option> <br>
+			    <option value="other">Other</option> <br>
+			</select>
+		</div>
+
+		<label for="textmessage" name="textmessage"><p> Few words about yourself: </p></label> <br>
+		<textarea id="textmessage" rows="10" cols="50" placeholder="Enter text..." required></textarea> <br>
+
+		<label for="file"><p>Pin a photo :</p></label> <br>
+		<input type="file" name="file" id="file"> <br>
+
+		<div style="margin-top: 20px;">
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</div>
+	</fieldset>
+</form>
+
+</body>
+</html>
