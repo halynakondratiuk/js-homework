@@ -1,0 +1,25 @@
+body {
+	color: #fff;
+	background-color: #1E90FF;
+}
+
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper nav {
+	flex: 30%;
+	border: 2px solid #fff;
+	border-radius: 10px;
+}
+
+.wrapper .main {
+	flex: 70%;
+}
+
+
+
+

@@ -1,0 +1,15 @@
+h1 {
+	font-family: 'source-sans-pro-regular', sans-serif, helvetica, arial;
+	font-size: 250px;
+	color: #464547;
+	transform: scale(0.5, 1.2);
+	letter-spacing: 0;
+	font-stretch: ultra-condensed;
+	font-weight: 600;
+}
+
+h1 span {
+	color: #39C2D7;
+	font-size: 200px;
+	font-weight: bold;
+}
