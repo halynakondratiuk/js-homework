@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>w3resource</title>
+</head>
+<body>
+<code>
+<pre>
+	<!-- // 1  -->
+	<h3>1</h3>
+	var d = new Date();
+	var day  = d.getDay();
+	var lists = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+	  console.log("Today is : " + lists[day] + ".");
+	var hour = d.getHours();
+	var sec = d.getSeconds();
+	var min = d.getMinutes();
+
+	console.log(hour + ":" + min + ":" + sec);
+	<!-- // ----------------------------------------- -->
+	<!-- // 2  -->
+	<h3>2</h3>
+	window.print();
+	<!-- //3 -->
+	<h3>3</h3>
+	var d = new Date();
+	var day = d.getDate();
+	var month = d.getMonth()+1;
+	var year = d.getFullYear();
+
+	if (day < 10){
+	  day = "0" + day;
+	}
+	if (month < 10) {
+		month = "0" + month;
+	}
+	d = month+"-"+day+"-"+year;
+	console.log(d);
+	d = month+"/"+day+"/"+year;
+	console.log(d);
+	d = day+"-"+month+"-"+year;
+	console.log(d);
+	d = day+"/"+month+"/"+year;
+	console.log(d);
+	<!-- // 4 -->
+	<h3>4</h3>
+	var a = 5;
+	var b = 6;
+	var c = 7;
+	var p = (a+b+c)/2;
+	var s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+	console.log(s);
+	<!-- // 5 -->
+	<h3>5</h3>
+	var str = "w3resource";
+	var newStr = [];
+	for(var i = str.length-1; i>=0; i--){
+		newStr.push(str[i]);
+	}
+	console.log(newStr);
+
+
+	<h3>6</h3>
+	var d = new Date(2,2018);
+	function daysInMonth(month, year) {
+	    return new Date(year, month, 0).getDate();
+	}
+	var curr = daysInMonth(2, 2004);
+
+	if(curr == 29){
+	console.log("Leap year!");
+	}else{console.log("Not leap year.")}
+
+
+	<h3>7</h3>
+	function getWeekDay(date) {
+	  var days = ['Sunday', 'Monday', 'Tuesday', 'Wensday', 'Thursday', 'Friday', 'Saturday'];
+
+	  return days[date.getDay()];
+	}
+	for (var i = 2014; i <= 2050; i++){
+		var date = new Date(i, 0, 1);
+	  if(getWeekDay(date) == 'Sunday'){
+	  console.log(i);
+	  }
+	}
+
+	<h3>8</h3>
+	var num = prompt("Enter a number", 0);
+	var number = Math.ceil(Math.random()*10);
+	if (num == number){
+	console.log("Good work!");
+	}else {
+	console.log("No matched!number"+number);
+	}
+		
+
+
+	<!-- // 10 -->
+	<h3>10</h3>
+	<input type="text" id="first" name="first" value="">
+	<input type="text" id="second" name="second" value="">
+	<button onclick="multiply()">Multiply</button>
+	<button onclick="division()">Division</button>
+	<label><strong>Result : </strong><span id="demo"></span></label>
+	<script type="text/javascript">
+		function multiply(){
+			var a = document.getElementById("first").value;
+			var b = document.getElementById("second").value;
+			var result = a * b;
+			return document.getElementById("demo").innerHTML = result;
+		}
+		function division(){
+			var a = document.getElementById("first").value;
+			var b = document.getElementById("second").value;
+			var res = a / b;
+			return document.getElementById("demo").innerHTML = res;
+		}
+	</script>
+
+	<!-- // 11 -->
+	<h3>11</h3>
+	function convertC(c){
+		var f = 9*c/5+32;
+	  console.log(c+" C is " + f + " F");
+	  return f;
+	}
+	function convertF(f){
+		var c = (f-32)/9*5;
+	  console.log(f+" F is " + c + " C")
+	}
+	console.log(convertC(60));
+	console.log(convertF(45));
+
+	<!-- // 12 -->
+	<h3>12</h3>
+	var url = document.URL;
+	console.log(url);
+
+	<!-- // 14 -->
+	<h3>14</h3>
+	var fileName = "file.jpeg";
+	var fileExtension = fileName.split('.').pop();
+	console.log(fileExtension);
+
+	<!-- // 15 -->
+	<h3>15</h3>
+	var b = 13;
+	function diff(a){
+	  if(a > b){
+	    return 2 * (a - b);
+	  }else {
+	  	return b - a;
+	  }
+	}
+	console.log(diff(10));
+
+	<!-- // 16 -->
+	<h3>16</h3>
+	function multiply(a, b){
+	  if(a == b){
+	    return  3 * (a + b);
+	  }else {
+	  	return a + b;
+	  }
+	}
+	console.log(multiply(10, 20));
+
+	<h3>17</h3>
+	function diff(a){
+	  if(a >= 19){
+	    return 3 * (a - 19);
+	  }else {
+	  	return 19 - a;
+	  }
+	}
+	console.log(diff(10));
+
+	<h3>18</h3>
+	function diff(a, b){
+	  if((a == 50 || b == 50) || (a + b == 50)){
+	    return true;
+	  }else {
+	  	return false;
+	  }
+	}
+	console.log(diff(20, 30));
+
+	<h3>19</h3>
+	function diff(a){
+	  return ((Math.abs(100 - a) <= 20) ||
+	 (Math.abs(400 - a) <= 20));
+	}
+	console.log(diff(200));
+
+	<h3>20</h3>
+	function diff(a, b){
+	  return (((a < 0) &&
+	 (b > 0)) || ((a > 0) && (b < 0)));
+	}
+	console.log(diff(200, -100));
+
+	<h3>21</h3>
+	var str = "Python";
+	var str2 = "stone";
+	function diff(str){
+		if (str.indexOf("Py") == 0){
+	      return str;
+	  }else {
+	  	return "Py" + str;
+	  }
+	}
+	console.log(diff(str2));
+
+	<h3>22</h3>
+	var str = "Python";
+	var str2 = "stone";
+	function diff(str, pos){
+	  var res = str.substr(0, pos) + str.substr(pos+1, str.length);
+	  return res;
+	}
+	console.log(diff(str2, 2));
+
+	<h3>23</h3>
+	var str = "Python";
+	var str2 = "stone";
+	function diff(str){
+	  if(str.length >=1){
+	    for(var i = 0; i<= str.length-1; i++){
+	    	var res = str.replace(str[str.length-1], str[0]);
+	      var result = res.replace(str[0], str[str.length-1]);
+	    }
+	  }
+	  return result;
+	}
+	console.log(diff(str));
+
+	<h3>24</h3>
+	var str = "Python";
+	var str2 = "stone";
+	function diff(str){
+	  var result = str.charAt(0) + str + str.charAt(0);
+
+	  return result;
+	}
+	console.log(diff(str));
+
+	<h3>25</h3>
+	function diff(a){
+	  if(a%3 == 0 || a%7 == 0){
+	    return true;
+	  }
+	  return false;
+	}
+	console.log(diff(9));
+
+	<h3>26</h3>
+	var str = "Python";
+	var str2 = "stone";
+	function diff(str){
+	  if(str.length >= 3){
+	    var el = str.substr(str.length-3);
+	    var result = el + str + el;
+	  }
+	  return result;
+	}
+	console.log(diff(str));
+
+	<h3>27</h3>
+	var str = "Python";
+	var str1 = "JavaScript";
+	var str2 = "stone";
+	function diff(str){
+	  if(str.substr(0, 4) == "Java"){
+	    return true;
+	  }
+	  return false;
+	}
+	console.log(diff(str1));
+
+	<h3>28</h3>
+	function diff(a,b){
+	  if((a<=99 && a>=50) || (b<=99 && b>=50)){
+	    return true;
+	  }
+	  return false;
+	}
+	console.log(diff(55, 75));
+
+	<h3>29</h3>
+	function diff(a,b,c){
+	  if((a<=99 && a>=50) || (b<=99 && b>=50) || (c<=99 && c>=50)){
+	    return true;
+	  }
+	  return false;
+	}
+	console.log(diff(55, 75));
+	
+
+	<h3>30</h3>
+	var str = "Python";
+	var str1 = "JavaScript";
+	var str2 = "stone";
+	function diff(str){
+	  if(str.indexOf("Script")==4){
+	    return str.replace("Script", "");
+	  }
+	  return str;
+	}
+	console.log(diff(str1));
+
+	<h3>31</h3>
+	function diff(a,b,c){
+	  if(a>b && a>c){
+	    return a;
+	  } if(b> a && b>c) {
+	    return b;
+	  }else {
+	    return c;
+	  }
+	}
+	console.log(diff(5,2,3));
+
+	<h3>32</h3>
+	function diff(a,b){
+	  var x = Math.abs(100 - a);
+	  var y = Math.abs(100 - b);
+	  if(x > y){
+	    return b;
+	  } else {
+	    return a;
+	  }
+	}
+	console.log(diff(99,98));
+
+	<h3>33</h3>
+	function diff(a,b){
+	  return (((a>= 40 && a<=60) && (b>= 40 && b<=60)) || ((a>= 70 && a<=100) && (b>= 70 && b<=100)))
+	}
+	console.log(diff(44,98));
+
+	<h3>34</h3>
+	function diff(a,b){
+	  if (((a>= 40 && a<=60) && (b>= 40 && b<=60))){
+	    if(a>b){
+	    	return a;
+	    } else {
+	      return b;
+	    }
+	  }else {
+	  	return "Not in the range.";
+	  }
+	}
+
+	console.log(diff(44, 70));
+
+	<h3>35</h3>
+	function diff(str, char){
+	 var counter = 0;
+	  var pos = -1;
+	while ((pos = str.indexOf(char, pos + 1)) != -1) {
+	  counter ++;
+	}
+	  console.log(counter);
+	  if(counter >=2 && counter <=4){
+	    return true;
+	  }else {
+	  	return false;
+	  }
+	}
+	console.log(diff("pippopp", "p"));
+
+	<h3>36</h3>
+	function diff(a, b, c){
+	  var x = a%10;
+	  var y = b%10;
+	  var z = c%10;
+	 if(x==y && x==z && y==z){
+	 	return true;
+	 }else {
+	 	return false;
+	 }
+	}
+	console.log(diff(155, 25, 105));
+
+	<h3>37</h3>
+	function diff(str){
+	 if(str.length <= 3){
+	 	return str.toUpperCase();
+	 }else {
+	 	return str.substr(0,3).toLowerCase()+str.substr(3);
+	 }
+	}
+	console.log(diff("dfUJHGFdf"));
+
+	<h3>38</h3>
+	function diff(totalMarks, exam){
+	 if(exam == "Final-exam"){
+	 	return totalMarks >=90;
+	 }
+	 	return (totalMarks >=89 && totalMarks <=100);
+	}
+	console.log(diff(97, "Final-exam"));
+
+	<h3>39</h3>
+	function diff(a,b){
+	  var sum = a+b;
+	 if(sum >= 50 && sum <=80){
+	 	return 65;
+	 }
+	 	return 80;
+	}
+	console.log(diff(30, 50));
+
+	<h3>40</h3>
+	function diff(a,b){
+	  var sum = a+b;
+	  var dif = Math.abs(a-b) ;
+	 if((a==8 || b==8) || sum == 8 || dif == 8){
+	 	return true;
+	 }
+	 	return false;
+	}
+	console.log(diff(8, 16));
+
+	<h3>41</h3>
+	function diff(a,b,c){
+	 if(a==b && a==c && b==c){
+	 	return 30;
+	 }if (a==b || a==c || b==c){
+	 	return 20;
+	 }else {
+	 	return 40;
+	 }
+	}
+	console.log(diff(8, 8, 8));
+
+	<h3>42</h3>
+	function diff(a,b,c){
+	 if(a &lt b && a &lt c && b &lt c){
+	 	return "strict mode";
+	 }else {
+	 	return "soft mode";
+	 }
+	}
+
+	console.log(diff(10,15,31));
+	console.log(diff(24,22,31));
+
+	<h3>43</h3>
+	function diff(a,b,c){
+	  var x= a%10;
+	  var y = b%10;
+	  var z = c%10;
+	 if(x==y || x==z || y==z){
+	 	return true;
+	 }else {
+	 	return false;
+	 }
+	}
+	console.log(diff(10,20,30));
+	console.log(diff(24, 22, 31));
+
+	<h3>44</h3>
+	function diff(a,b,c){
+	 if((a>=20) && (a &lt b || a &lt c )){
+	 	return a;
+	 }if ((b>=20) && (b &lt a || b &lt c )) {
+	 	return b;
+	 }else{
+	 	return c;
+	 }
+	}
+	console.log(diff(10,20,30));
+	console.log(diff(24, 22, 31));
+
+	<h3>45</h3>
+    <p>Same as 40.</p>
+
+    <h3>46</h3>
+    function diff(a,b){
+	  if(a!=b){
+	    if((a%7==0 || a%11==0) || (b%7==0 || b%11==0)) {
+	    return true;
+	    }
+	    return false;
+	  }
+	  return "Same number";
+	}
+	console.log(diff(22,22));
+	console.log(diff(22,10));
+
+	<h3>47</h3>
+
+
+	<h3>48</h3>
+	function diff(str){
+	  var newstr = str.split("")
+		str = newstr.reverse();
+	  return str.join("");
+	}
+	console.log(diff("join"));
+
+	<h3>49</h3>
+	function diff(str){
+	  var newStr = '';
+	 for(var i =0; i<=str.length; i++){
+	    newStr += String.fromCharCode(str.charCodeAt(i)+1);
+	 }
+	  return newStr;
+	}
+	console.log(diff("join"));
+
+	<h3>50</h3>
+	function diff(str){
+	  var arr = str.split(' ');
+
+	  for (var i = 1; i < arr.length; i++) {
+	    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	  }
+
+	  return arr.join(' ');
+	}
+	console.log(diff("join hgyj fhui"));
+
+	<h3>51</h3>
+	function diff(a){
+	  var h = Math.floor(a/60);
+	  var m = a%60;
+	  return h + " : " + m;
+	}
+	console.log(diff(71));
+
+
+
+	<h3>52</h3>
+	function diff(str){
+	  var arr = str.split("");
+	  str = arr.sort();
+	  return str.join('');
+	}
+	console.log(diff("cba"));
+
+	<h3>53</h3>
+	function diff(str){
+	  var index = str.indexOf("a");
+	  var ind = str.indexOf("b");
+	  console.log(index);
+	  console.log(ind);
+	  if (ind == (index+2) || ind == (index+4)){
+	    return true;
+	  }else{
+	  	return false;
+	  }
+	}
+	console.log(diff("shggkamngbnahs"));
+
+	<h3>54</h3>
+
+	function diff(str){
+	  var counter = 0;
+	  for(var i=0; i<=str.length; i++){
+	    if ((str.charCodeAt(i)==97) || (str.charCodeAt(i) == 101) || (str.charCodeAt(i)==105) || (str.charCodeAt(i)==111) || (str.charCodeAt(i)==117) || (str.charCodeAt(i)==121)){
+	    counter ++;
+	    }
+	  }
+	  return counter;
+	}
+	console.log(diff("abcoi"));
+
+	<h3>55</h3>
+	function diff(str){
+	  var counter = 0;
+	  var counter2 = 0;
+	  for(var i=0; i<=str.length; i++){
+	    if ((str.charCodeAt(i)==112)){
+	    counter ++;
+	    }
+	    if ((str.charCodeAt(i)==116)){
+	    counter2 ++;
+	    }
+	  }
+	  if(counter == counter2){
+	    return true;
+	  }
+	  return false;
+	}
+	console.log(diff("ttabcoipp"));
+
+	<h3>56</h3>
+	function diff(a,b){
+	  var div = Math.abs(a / b);
+	  div = div.toString();
+	  return div.replace(".", ",");
+	}
+	console.log(diff(45, 6));
+
+	<h3>57</h3>
+	function diff(str,b){
+	  return (new Array(b+1).join(str)) ;
+	}
+	console.log(diff("abc", 2));
+
+	<h3>58</h3>
+	function diff(str){
+	  if(str.length >=3){
+	    var subStr = str.substr(str.length-3);
+	    return subStr.repeat(4);
+	  }
+	}
+	console.log(diff("abcdfe"));
+
+	<h3>59</h3>
+	function diff(str){
+	  if(str.length % 2 ==0){
+	    var subStr = str.substr(0, Math.ceil(str.length/2));
+	    return subStr;
+	  }
+	}
+	console.log(diff("abcdfefg"));
+
+
+
+
+
+</pre>
+</code>
+
+</body>
+</html>

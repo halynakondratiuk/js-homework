@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays</title>
+</head>
+<body>
+<h1>Working with arrays</h1>
+
+<h3>Double array with map():</h3>
+<p id="demoOne"></p>
+<script>
+	var testArray = [1,2435,544,4545, 4, 6, 7 ,23];
+    function double(array) {
+    	var doubleArray = array.map(function(arr) {
+			return arr*2;
+		});
+		return doubleArray;
+    }
+    document.getElementById("demoOne").innerHTML = double(testArray);
+</script>
+
+<h3>Odd elements using filter():</h3>
+<p id="demoTwo"></p>
+<script>
+	var testArray = [1,2435,544,4545, 4, 6, 7 ,23];
+	function oddFilter(array) {
+    	var oddArr = array.filter(function(number) {
+		  return number%2 != 0;
+		});
+		return oddArr;
+    }
+    document.getElementById("demoTwo").innerHTML = oddFilter(testArray);
+</script>
+
+<h3>Avg using reduce():</h3>
+<p id="demoThree"></p>
+<script>
+	var testArray = [1,2435,544,4545, 4, 6, 7 ,23];
+	function avg(array) {
+    	var result = array.reduce(function(sum, current) {
+		    return sum + current;
+		});
+		return result/testArray.length;
+    }
+    document.getElementById("demoThree").innerHTML = avg(testArray);
+</script>
+</body>
+</html>

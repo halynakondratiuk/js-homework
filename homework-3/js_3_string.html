@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+</head>
+<body>
+<h1>Work with strings</h1>
+
+<h3>Cut string and add dots at the end:</h3>
+<p id="demoOne"></p>
+
+<script>
+	function truncate(str, maxlength) {
+	  if (str.length > maxlength) {
+	    return str.substr(0, maxlength) + '&hellip;';
+	 }
+
+	  return str;
+	}
+	document.getElementById("demoOne").innerHTML = truncate("I love js", 5);
+</script>
+
+<h3>Find all "a":</h3>
+<p id="demoTwo"></p>
+<script>
+	var str = "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького.";
+	var letter = "а";
+	var pos = -1;
+	var counter = 0;
+
+	function findA(str){
+		while ((pos = str.indexOf(letter, pos + 1)) != -1) {
+		  counter++;
+		}
+		return counter;
+	}
+	document.getElementById("demoTwo").innerHTML = findA(str);
+</script>
+
+
+<h3>Remove "xxxx" and "polityka":</h3>
+<p id="demoThree"></p>
+<script>
+    var firstStr = "choose new polityka xxxx";
+    var secondStr = "polityka is bad xxxx stuff";
+
+	function checkWords(str) {
+	    var newStr = str.toLowerCase();
+    	newStr = newStr.replace("xxxx", "");
+    	newStr = newStr.replace("polityka", "");
+
+	    return newStr;
+	}
+
+	document.getElementById("demoThree").innerHTML = checkWords(secondStr);
+</script>
+
+
+<h3>Show only numbers:</h3>
+<p id="demoFour"></p>
+<script>
+	var str = "іва 24 уц ац34434ауку";
+	var newStr = str.match(/\d/g);
+	newStr = newStr.join("");
+	document.getElementById("demoFour").innerHTML = newStr;
+</script>
+
+<h3>Repeating symbols in string:</h3>
+<p id="demoFive"></p>
+<script>
+	var str = "pippiPfjhgfbgf";
+	var arrays = [];
+	function remember(str){
+		for (var i = 0; i <= str.length; i++) {
+			for (var j = i+1; j <= str.length; j++) {
+				if (str[j] == str[i]) {
+					var letter = str[j];
+					arrays.push(letter);
+					arrays = arrays.filter(function (item, x, arr) { 
+					    return arr.indexOf(item) == x; 
+					});
+				}
+			}
+		}
+		return arrays;
+	}
+	document.getElementById("demoFive").innerHTML = remember(str);
+</script>
+</body>
+</html>
