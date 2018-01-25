@@ -1,0 +1,79 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JS Homework 2: querySelector, date, timeout</title>
+</head>
+<body>
+<!-- Task 2  -->
+  <h1>World time</h1>
+  <ul>
+    <li data-location="london">London - <span class="time"></span></li>
+    <li data-location="kyiv">Kyiv - <span class="time"></span></li>
+    <li data-location="warshawa">Warshawa - <span class="time"></span></li>
+    <li data-location="los angeles">Los Angeles - <span class="time"></span></li>
+    <li data-location="new york">New York - <span class="time"></span></li>
+  </ul>
+
+<script>
+   function timeZone(zone){
+     // var d = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+     // console.log(d);
+     var date = new Date();
+     var day = date.getUTCDate();
+     var month = date.getUTCMonth() + 1;
+     var year = date.getUTCFullYear();
+     var hour = date.getUTCHours() + zone;
+     var minute = date.getUTCMinutes();
+
+     if (hour >= 24){
+       hour = hour-24;
+       day -= -1;
+     }
+     if (hour < 0){
+        hour -= -24;
+        day -= 1;
+      }
+     if( day < 10 ){
+      day = "0" + day;
+     }
+     if( month < 10 ) {
+      month = "0" + month;
+     }
+     if ( hour < 10 ) {
+      hour = " " + hour;
+     }
+     if ( minute < 10 ) {
+      minute = "0" + minute;
+     }
+
+     return day + "." + month + "." + year + " - " + hour + ":" + minute;
+     // var london = day + "." + month + "." + year + " - " + hour + ":" + minute;
+     // var kyiv = day + "." + month + "." + year + " - " + (hour+2) + ":" + minute;
+     // var warshawa = day + "." + month + "." + year + " - " + (hour+1) + ":" + minute;
+     // var los_angeles = day + "." + month + "." + year + " - " + (hour-8) + ":" + minute;
+     // var new_york = day + "." + month + "." + year + " - " + (hour-5) + ":" + minute;
+ }
+
+   var locations = document.querySelectorAll(".time");
+
+   locations[0].innerHTML = timeZone(0);
+   locations[1].innerHTML = timeZone(2);
+   locations[2].innerHTML = timeZone(1);
+   locations[3].innerHTML = timeZone(-8);
+   locations[4].innerHTML = timeZone(-5);
+
+   // locations[0].innerHTML = london;
+   // locations[1].innerHTML = kyiv;
+   // locations[2].innerHTML = warshawa;
+   // locations[3].innerHTML = los_angeles;
+   // locations[4].innerHTML = new_york;
+
+
+   // var timedifference = new Date().getTimezoneOffset();
+   // console.log(timedifference);
+
+  // вивести для кожного міста час і дату
+  // формат 24.09.2017 - 15:40
+</script>
+</body>
+</html>

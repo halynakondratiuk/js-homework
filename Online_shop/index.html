@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online shop</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<nav class="grid-element">
+		<p>Online Shop</p>
+	</nav>
+	<main class="grid-element">
+		<div class="grid-element element_a">
+			<img src="images/placeholder.png">
+			<div class="element">
+				<h2 class="name">Iphone 5</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+				</p>
+				<span class="price">300$</span>
+				<button class="btn" onclick="buyProduct(event)">Купити</button>
+			</div>
+		</div>
+		<div class="grid-element element_b">
+			<img src="images/placeholder.png">
+			<div class="element">
+				<h2 class="name">Iphone 6</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+				<span class="price">400$</span>
+				<button class="btn" onclick="buyProduct(event)">Купити</button>
+			</div>
+		</div>
+		<div class="grid-element element_c">
+			<img src="images/placeholder.png">
+			<div class="element">
+				<h2 class="name">Iphone 7</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+				</p>
+				<span class="price">500$</span>
+				<button class="btn" onclick="buyProduct(event)">Купити</button>
+			</div>
+		</div>
+		<div class="grid-element element_d">
+			<img src="images/placeholder.png">
+			<div class="element">
+				<h2 class="name">Iphone 8</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+				</p>
+				<span class="price">600$</span>
+				<button class="btn" onclick="buyProduct(event)">Купити</button>
+			</div>
+		</div>
+	</main>
+	<aside class="grid-element">
+		<div class="cart">
+			<p class="title">Cart</p>
+			<div id="show">
+				<h3>Ваша корзина пуста.</h3>
+			</div>
+			<div id="hide" style="display: none;">
+				<table>
+					<thead>
+						<tr>
+							<th><strong>Назва</strong></th>
+							<th><strong>Ціна</strong></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody id="list">
+					</tbody>
+				</table>
+				<div class="counter">
+					<span class="text">У вас в корзині <span id="count"></span> товара.</span>
+					<span id="total"></span>
+				</div>
+				<div class="buttons">
+					<button class="clear" onclick="clearCart()">Очистити корзину</button>
+					<button class="buyprod">Оформити</button>
+				</div>
+			</div>
+		</div>
+	</aside>
+</div>
+<script>
+	var counter = 0;
+	function buyProduct(event){
+		var current = event.target;
+		var list = document.getElementById('list');
+		var newTr = document.createElement('tr');
+		list.appendChild(newTr);
+
+		var newTd = document.createElement('td');
+		newTd.innerHTML = current.parentNode.children[0].innerHTML;
+
+		var newTd1 = document.createElement('td');
+		newTd1.innerHTML = current.parentNode.children[2].innerHTML;
+
+		var newTd2 = document.createElement('td');
+		var btn = document.createElement('button');
+		btn.innerHTML = "Видалити";
+		btn.setAttribute("onclick", "removeEl(event)");
+		newTd2.appendChild(btn);
+
+		newTr.appendChild(newTd);
+		newTr.appendChild(newTd1);
+		newTr.appendChild(newTd2);
+
+		// total price
+		var price = current.parentNode.children[2].innerHTML;
+		var newPrice = parseInt(price.substring(0, price.length-1));
+		var total = document.getElementById('total');
+		var inner = total.innerHTML;
+		inner += newPrice;
+
+		if(counter !=  0){
+			inner = parseInt(inner.substring(0, inner.length-1));
+			inner += newPrice;
+		}
+		var sum = inner;
+		total.innerHTML = sum + price.charAt(price.length-1)
+
+		// counter;
+		var count = document.getElementById('count');
+		count.innerHTML = ++counter;
+	}
+
+	function removeEl(event){
+		var currentEvent = event.target;
+		var list = document.getElementById('list');
+		list.removeChild(currentEvent.parentNode.parentNode);
+
+		var count = document.getElementById('count');
+		count.innerHTML = --counter;
+
+		var total = document.getElementById('total');
+		var price = total.innerHTML;
+		price = price.substring(0, price.length-1);
+		var currentPrice = currentEvent.parentNode.previousSibling.innerHTML;
+		currentPrice = currentPrice.substring(0, currentPrice.length-1);
+		var newPrice = price - currentPrice;
+		total.innerHTML = newPrice + "$";
+		
+
+		if(counter == 0){
+			total.innerHTML = null;
+			document.getElementById("hide").style.display = "none";
+			document.getElementById("show").style.display = "block";
+		}
+	}
+
+	function clearCart(){
+		var list = document.getElementById('list').innerHTML = "";
+
+		var total = document.getElementById('total');
+		total.innerHTML = null;
+		counter = 0;
+		document.getElementById("hide").style.display = "none";
+		document.getElementById("show").style.display = "block";
+	}
+</script>
+<script>
+	$(document).ready(function(){
+	    $(".btn").click(function(){
+	        $("#show").hide();
+	        $("#hide").show();
+	    });
+	});
+</script>
+</body>
+</html>

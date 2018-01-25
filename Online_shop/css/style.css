@@ -1,0 +1,145 @@
+nav {
+	background-color: #000;
+	color: #ddd;
+	top: 0;
+	width: 100%;
+}
+
+nav p {
+	margin: 0;
+	padding: 10px 20px;
+}
+
+main {
+	float: left;
+	width: 70%;
+	margin-top: 10%;
+}
+
+aside {
+	float: right;
+	width: 30%;
+}
+
+/*******Styles for main content***********/
+main > div {
+	display: inline-block;
+	float: left;
+	width: 38%;
+    margin-right: 90px;
+    margin-top: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+main div img {
+	padding: 8px;
+	max-width: 100%;
+}
+
+main div .element {
+	padding: 18px;
+	margin-bottom: 25px;
+}
+
+main div .element h2 {
+	margin: 0;
+}
+
+main div .element span {
+	float: left;
+	margin-top: 10px;
+}
+
+main div .element .price {
+	font-weight: bold;
+}
+
+main div .element button {
+	float: right;
+	background-color: #1E90FF;
+	color: #fff;
+	padding: 5px 12px;
+	border-color: #1E90FF;
+	border-radius: 5px;
+}
+
+/***********Styles for cart form *********/
+
+aside .cart {
+	border: 1px solid #1E90FF;
+	border-radius: 5px;
+	margin-top: 30%;
+}
+
+aside .cart .title {
+	margin: 0;
+	padding: 5px;
+	background-color: #1E90FF;
+	color: #fff;
+}
+
+aside .cart #show {
+	text-align: center;
+}
+
+aside .cart table {
+	width: 90%;
+	padding: 10px 0;
+	border-collapse: collapse;
+	margin: 20px 5%;
+}
+
+aside .cart table thead th {
+	background-color: #F5F5F5;
+	border-top: 1px solid #dcdcdc;
+	text-align: left;
+	padding: 5px 10px;
+}
+
+aside .cart table td {
+	padding: 10px 20px;
+	border-top: 1px solid #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+}
+
+aside .cart .counter {
+	padding-top: 10%;
+	padding-bottom: 15%;
+}
+
+aside .cart #total {
+	font-weight: bold;
+	float: right;
+	margin-right: 10%;
+}
+
+aside .cart .text {
+	margin-left: 10%;
+	float: left;
+}
+
+aside .cart .buttons {
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
+aside .cart .buttons .clear {
+	background-color: #f44747;
+	border-color: #f44747;
+	border-radius: 5px;
+	color: #fff;
+	padding: 2px 16px;
+	margin-left: 12%;
+	word-break: break-all;
+	width: 7.5em;
+}
+
+aside .cart .buttons .buyprod {
+	background-color: #1E90FF;
+	border-color: #1E90FF;
+	border-radius: 5px;
+	color: #fff;
+	padding: 5px 14px 12px 14px;
+	margin-left: 12%;
+}
