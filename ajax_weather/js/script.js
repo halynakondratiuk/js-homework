@@ -68,7 +68,6 @@ $(document).ready(function(){
             	$("section.card-odessa > p.card-info").html(data.weather[0].main+", "+data.weather[0].description);
 	    	}
 	    );
-	    console.log("ok");
     }
 
     // update button
@@ -77,5 +76,5 @@ $(document).ready(function(){
     });
 
     // update every 5 minutes
-    setInterval(function(){ sendAjaxCall(); console.log('okey'); }, 300000);
+    setInterval(function(){ sendAjaxCall(); }, 300000);
 });
